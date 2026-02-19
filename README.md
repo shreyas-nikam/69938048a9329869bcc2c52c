@@ -8,7 +8,7 @@ Here's a comprehensive `README.md` file for your Streamlit application lab proje
 
 ## Project Overview
 
-This Streamlit application, "QuLab: Lab 50: Portfolio Optimization with AI Predictions," is an interactive tool designed to simulate and analyze the integration of machine learning (ML) insights into the portfolio construction process. Tailored for investment professionals, quantitative analysts, and students, it provides a hands-on experience in applying ML-generated alpha scores within a constrained Mean-Variance Optimization (MVO) framework. The application further explores advanced topics such as turnover penalization, the Black-Litterman model for blending market views with ML predictions, and robust strategy validation through walk-forward backtesting.
+This Streamlit application, "QuLab: Lab 50: Portfolio Optimization with AI Predictions," is an interactive tool designed to simulate and analyze the integration of machine learning (ML) insights into the portfolio construction process. Tailored for investment professionals, quantitative analysts, and students, it provides a hands-on experience in applying ML-generated alpha scores within a constrained Mean-Variance Optimization (MVO) framework using **real historical market data from Yahoo Finance**. The application further explores advanced topics such as turnover penalization, the Black-Litterman model for blending market views with ML predictions, and robust strategy validation through walk-forward backtesting.
 
 The project's high-level story flow guides users through a structured workflow, from data loading to comprehensive performance evaluation, allowing for experimentation with various optimization parameters and risk models.
 
@@ -20,9 +20,11 @@ The application is structured into several interconnected modules, accessible vi
     *   Provides a high-level purpose and a step-by-step story flow of the application.
 
 2.  **Input Data Loading**:
-    *   Allows users to upload custom CSV files for ML Alpha Scores and Historical Stock Returns.
-    *   Includes a fallback option to generate and load sample data for immediate demonstration.
-    *   Displays a preview of the loaded dataframes.
+    *   **Downloads real historical stock data** from Yahoo Finance using yfinance library.
+    *   Retrieves data for approximately 200 popular stocks from the S&P 500.
+    *   Includes 120 months of historical returns and real sector classifications.
+    *   Generates ML-based alpha scores using momentum and risk-adjusted return signals.
+    *   Displays a preview of the loaded dataframes and real market data.
 
 3.  **Mean-Variance Optimization (MVO)**:
     *   Implements classic MVO to find optimal portfolio weights based on ML-predicted returns and historical covariance.
